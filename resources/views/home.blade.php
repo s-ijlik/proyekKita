@@ -1,217 +1,796 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ LAConfigs::getByKey('site_description') }}">
-    <meta name="author" content="Dwij IT Solutions">
+    <title>ProyekKita.com</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Transporters web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web Designs" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--// Meta tag Keywords -->
 
-    <meta property="og:title" content="{{ LAConfigs::getByKey('sitename') }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="{{ LAConfigs::getByKey('site_description') }}" />
-    
-    <meta property="og:url" content="http://laraadmin.com/" />
-    <meta property="og:sitename" content="laraAdmin" />
-	<meta property="og:image" content="http://demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@laraadmin" />
-    <meta name="twitter:creator" content="@laraadmin" />
-    
-    <title>{{ LAConfigs::getByKey('sitename') }}</title>
-    
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('/la-assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" /><!-- for testimonials -->
 
-	<link href="{{ asset('la-assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-    
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('/la-assets/css/main.css') }}" rel="stylesheet">
+    <!-- css files -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-
-    <script src="{{ asset('/la-assets/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
-    <script src="{{ asset('/la-assets/js/smoothscroll.js') }}"></script>
-
-
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- //web-fonts -->
 </head>
-
-<body data-spy="scroll" data-offset="0" data-target="#navigation">
-
-<!-- Fixed navbar -->
-<div id="navigation" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+<body>
+<div class="header">
+    <nav class="navbar navbar-default">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>{{ LAConfigs::getByKey('sitename') }}</b></a>
+            <h1><a href="index.html">ProyekKita.com</a></h1>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#home" class="smoothScroll">Home</a></li>
-                <li><a href="#about" class="smoothScroll">About</a></li>
-                <li><a href="#contact" class="smoothScroll">Contact</a></li>
-            </ul>
+        <div class="top-nav-text">
+            <div class="nav-contact-w3ls"><i class="fa fa-phone" aria-hidden="true"></i><p>085704170077 Anggy</p></div>
+        </div>
+        <!-- navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <!--<li><a href="{{ url('/register') }}">Register</a></li>-->
-                @else
-                    <li><a href="{{ url(config('laraadmin.adminRoute')) }}">{{ Auth::user()->name }}</a></li>
-                @endif
+                <li><a class="hvr-underline-from-center active" href="index.html">Home</a></li>
+                <li><a href="services.html" class="hvr-underline-from-center">Services</a></li>
+                <li><a href="#team" class="hvr-underline-from-center scroll scroll">Team</a></li>
+                <li><a href="{{ url('/gallery') }}" class="hvr-underline-from-center">Gallery</a></li>
+                <li><a href="#" data-toggle="dropdown"><span data-hover="ShortCodes">LOGIN</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="icons.html"><span data-hover="Icons">REGISTER</span></a></li>
+                        <li><a href="{{ url('/login') }}"><span data-hover="Typograpghy">LOGIN</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="hvr-underline-from-center">Contact</a>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+
+        <div class="clearfix"> </div>
+    </nav>
+
+</div>
+<!-- Slider -->
+<div class="slider">
+    <div class="callbacks_container">
+
+        <ul class="rslides" id="slider">
+            <li>
+                <div class="w3layouts-banner-top w3layouts-banner-top1">
+                    <div class="banner-dott">
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-8">
+                                    <h2>Auto transport to fill</h2>
+                                    <h4>the truck space</h4>
+                                    <div class="w3ls-button">
+                                        <a href="#" data-toggle="modal" data-target="#myModal">More About Our Project</a>
+                                    </div>
+                                    <div class="bannergrids">
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-truck" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-ship" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-bus" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-4">
+                                    <div class="banner-form-agileinfo">
+                                                                    <h5>Need To <span>Kontraktor</span>?</h5>
+                                                                    <p>Ut enim ad minima veniam, quis nostrum
+                                                                        exerc ullam corporis nisi ut aliqui</p>
+                                                                    <form action="#" method="post">
+                                                                        <input type="text" class="email" name="name" placeholder="Name" required="">
+                                                                        <input type="tel" class="tel" name="tel" placeholder="Phone Number" required="">
+                                                                        <select class="form-control option-w3ls">
+                                                                                <option>Transport From</option>
+                                                                                <option>Albania</option>
+                                                                                <option>Belgium</option>
+                                                                                <option>Cameroon</option>
+                                                                                <option>Dominica</option>
+                                                                                <option>France</option>
+                                                                                <option>Jersey</option>
+                                                                        </select>
+                                                                        <select class="form-control option-w3ls">
+                                                                                <option>Transport To</option>
+                                                                                <option>Colombia</option>
+                                                                                <option>Indonesia</option>
+                                                                                <option>Japan</option>
+                                                                                <option>Lebanon</option>
+                                                                                <option>Luxembourg</option>
+                                                                                <option>Montserrat</option>
+                                                                        </select>
+                                                                        <input type="submit" class="hvr-shutter-in-vertical" value="Get started">
+                                                                    </form>
+                                                                </div>
+                                                            </div>>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3layouts-banner-top">
+                    <div class="banner-dott">
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-8">
+                                    <h3>independent Carriers</h3>
+                                    <h4>auto shipping</h4>
+                                    <div class="w3ls-button">
+                                        <a href="#" data-toggle="modal" data-target="#myModal">More About Our Project</a>
+                                    </div>
+                                    <div class="bannergrids">
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-truck" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-ship" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-bus" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3layouts-banner-top w3layouts-banner-top3">
+                    <div class="banner-dott">
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-8">
+                                    <h3>Streamer loads in</h3>
+                                    <h4>large Carriers</h4>
+                                    <div class="w3ls-button">
+                                        <a href="#" data-toggle="modal" data-target="#myModal">More About Our Project</a>
+                                    </div>
+                                    <div class="bannergrids">
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-truck" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-ship" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-bus" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3layouts-banner-top w3layouts-banner-top2">
+                    <div class="banner-dott">
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-8">
+                                    <h3>vehicles Transport</h3>
+                                    <h4>Huge in collection</h4>
+                                    <div class="w3ls-button">
+                                        <a href="#" data-toggle="modal" data-target="#myModal">More About Our Project</a>
+                                    </div>
+                                    <div class="bannergrids">
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-truck" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-ship" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-bus" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="w3layouts-banner-top w3layouts-banner-top4">
+                    <div class="banner-dott">
+                        <div class="container">
+                            <div class="slider-info">
+                                <div class="col-md-8">
+                                    <h3>Goods Carrying Train</h3>
+                                    <h4>Truck shipping</h4>
+                                    <div class="w3ls-button">
+                                        <a href="#" data-toggle="modal" data-target="#myModal">More About Our Project</a>
+                                    </div>
+                                    <div class="bannergrids">
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-truck" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-ship" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="col-md-4 grid1">
+                                            <i class="fa fa-bus" aria-hidden="true"></i>
+                                            <p>lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </li>
+        </ul>
+        
     </div>
+    <div class="clearfix"></div>
 </div>
 
-
-<section id="home" name="home"></section>
-<div id="headerwrap">
-    <div class="container">
-        <div class="row centered">
-            <div class="col-lg-12">
-                <h1>{{ LAConfigs::getByKey('sitename_part1') }} <b><a>{{ LAConfigs::getByKey('sitename_part2') }}</a></b></h1>
-                <h3>{{ LAConfigs::getByKey('site_description') }}</h3>
-                <h3><a href="{{ url('/login') }}" class="btn btn-lg btn-success">Get Started!</a></h3><br>
+<!-- //Slider -->
+<!-- bootstrap-modal-pop-up -->
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                Transporters
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-            <div class="col-lg-2">
-                <h5>Amazing Functionalities</h5>
-                <p>for Modern Admin Panels</p>
-                <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/la-assets/img/arrow1.png') }}">
+            <div class="modal-body">
+                <img src="images/bg3.jpg" alt=" " class="img-responsive" />
+                <p>Ut enim ad minima veniam, quis nostrum
+                    exercitationem ullam corporis suscipit laboriosam,
+                    nisi ut aliquid ex ea commodi consequatur? Quis autem
+                    vel eum iure reprehenderit qui in ea voluptate velit
+                    esse quam nihil molestiae consequatur, vel illum qui
+                    dolorem eum fugiat quo voluptas nulla pariatur.
+                    <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+                        esse quam nihil molestiae consequatur.</i></p>
             </div>
-            <div class="col-lg-8">
-                <img class="img-responsive" src="{{ asset('/la-assets/img/app-bg.png') }}" alt="">
-            </div>
-            <div class="col-lg-2">
-                <br>
-                <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/la-assets/img/arrow2.png') }}">
-                <h5>Completely Packaged...</h5>
-                <p>for Future expantion of Modules</p>
-            </div>
-        </div>
-    </div> <!--/ .container -->
-</div><!--/ #headerwrap -->
-
-
-<section id="about" name="about"></section>
-<!-- INTRO WRAP -->
-<div id="intro">
-    <div class="container">
-        <div class="row centered">
-            <h1>An Architecture designed To Excel</h1>
-            <br>
-            <br>
-            <div class="col-lg-4">
-                <i class="fa fa-cubes" style="font-size:100px;height:110px;"></i>
-                <h3>Modular</h3>
-                <p>Making Data Management fast and enjoyable.</p>
-            </div>
-            <div class="col-lg-4">
-                <i class="fa fa-paper-plane" style="font-size:100px;height:110px;"></i>
-                <h3>Easy to Install</h3>
-                <p>With single installation command.</p>
-            </div>
-            <div class="col-lg-4">
-                <i class="fa fa-cubes" style="font-size:100px;height:110px;"></i>
-                <h3>Customizable</h3>
-                <p>Easy to Manipulation the flows.</p>
-            </div>
-        </div>
-        <br>
-        <hr>
-    </div> <!--/ .container -->
-</div><!--/ #introwrap -->
-
-<!-- FEATURES WRAP -->
-<div id="features">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 centered">
-                <img class="centered" src="{{ asset('/la-assets/img/mobile.png') }}" alt="">
-            </div>
-
-            <div class="col-lg-7">
-				<h3 class="feature-title">What is LaraAdmin ?</h3><br>
-				<ol class="features">
-					<li><strong>CMS</strong> (Content Management System) &#8211; Manages Modules &amp; their Data</li>
-					<li>Backend <strong>Admin Panel</strong> &#8211; Data can be used in front end applications with ease.</li>
-					<li>A probable <strong>CRM</strong> System &#8211; Can be evolved into a CRM system like <a target="_blank" href="https://www.sugarcrm.com">SugarCRM</a></li>
-				</ol><br>
-
-				<h3 class="feature-title">Why LaraAdmin ?</h3><br>
-                <ol class="features">
-					<li><strong>Philosophy:</strong> Inspired by SugarCRM &amp; based on Advanced <strong>Data Types</strong> like Image, HTML, File, Dropdown, TagInput which makes developers job easy. See more in <a target="_blank" href="http://laraadmin.com/features">features</a></li>
-					<li>Superior <strong>CRUD generation</strong> for Modules which generates Migration, Controller, Model and Views with single artisan command and integrates with Routes as as well.</li>
-					<li><strong>Form Maker</strong> helper is provided for generating entire form with single function call with module name as single parameter. It also gives you freedom to customise form for every field by providing method to generate single field with parameters for customisations.</li>
-					<li><b>Upload Manager </b>manages project files &amp; images which are integrated with your Module fields.</li>
-					<li><strong>Menu Manager</strong> creates menu with Modules &amp; Custom Links likes WordPress</li>
-					<li><strong>Online Code Editor</strong> allows developers to customise the generated Module Views &amp; Files.</li>
-				</ol>
-            </div>
-        </div>
-    </div><!--/ .container -->
-</div><!--/ #features -->
-
-<section id="contact" name="contact"></section>
-<div id="footerwrap">
-    <div class="container">
-        <div class="col-lg-5">
-            <h3>Contact Us</h3><br>
-            <p>
-				Dwij IT Solutions,<br/>
-				Web Development Company in Pune,<br/>
-                B4, Patang Plaza Phase 5,<br/>
-                Opp. PICT College,<br/>
-                Katraj, Pune, India - 411046
-            </p>
-			<div class="contact-link"><i class="fa fa-envelope-o"></i> <a href="mailto:hello@laraadmin.com">hello@laraadmin.com</a></div>
-			<div class="contact-link"><i class="fa fa-cube"></i> <a href="http://laraadmin.com">laraadmin.com</a></div>
-			<div class="contact-link"><i class="fa fa-building"></i> <a href="http://dwijitsolutions.com">dwijitsolutions.com</a></div>
-        </div>
-
-        <div class="col-lg-7">
-            <h3>Drop Us A Line</h3>
-            <br>
-            <form role="form" action="#" method="post" enctype="plain">
-                <div class="form-group">
-                    <label for="name1">Your Name</label>
-                    <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="email1">Email address</label>
-                    <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label>Your Text</label>
-                    <textarea class="form-control" name="Message" rows="3"></textarea>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
-            </form>
         </div>
     </div>
 </div>
-<div id="c">
+<!-- //bootstrap-modal-pop-up -->
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <div class="col-md-7 bannerbottomleft">
+        <div class="video-grid-single-page-agileits">
+            <div data-video="d3q5mRA5djY" id="video"> <img src="images/bg2.jpg" alt="" class="img-responsive" /> </div>
+        </div>
+    </div>
+    <div class="col-md-5 bannerbottomright">
+        <h3>How Does We Work?</h3>
+        <p>Ut enim ad minima veniam, quis nostrum
+            exercitationem ulla corporis suscipit laboriosam,
+            nisi ut aliquid ex ea.</p>
+        <h4><i class="fa fa-taxi" aria-hidden="true"></i>International Transport Deliver System</h4>
+        <h4><i class="fa fa-shield" aria-hidden="true"></i>Fast & Best Deliver Service</h4>
+        <h4><i class="fa fa-ticket" aria-hidden="true"></i>Standard Courier value</h4>
+        <h4><i class="fa fa-space-shuttle" aria-hidden="true"></i>Easy And Auto Shipping Service</h4>
+        <h4><i class="fa fa-truck" aria-hidden="true"></i>Packaging & Storage</h4>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!-- //banner-bottom -->
+
+<!-- team -->
+<div class="team" id="team">
     <div class="container">
-        <p>
-            <strong>Copyright &copy; 2016. Powered by <a href="https://dwijitsolutions.com"><b>Dwij IT Solutions</b></a>
-        </p>
+        <div class="heading">
+            <h3>Our Dealers</h3>
+        </div>
+        <div class="wthree_team_grids">
+            <div class="col-md-3 wthree_team_grid">
+                <div class="hovereffect">
+                    <img src="images/team1.jpg" alt=" " class="img-responsive" />
+                    <div class="overlay">
+                        <h6>Project Manager</h6>
+                        <div class="rotate">
+                            <p class="group1">
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </p>
+                            <hr>
+                            <hr>
+                            <p class="group2">
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Anggy Yolanda </h4>
+                <p>Project Manager</p>
+            </div>
+            <div class="col-md-3 wthree_team_grid">
+                <div class="hovereffect">
+                    <img src="images/team2.jpg" alt=" " class="img-responsive" />
+                    <div class="overlay">
+                        <h6>Transporters</h6>
+                        <div class="rotate">
+                            <p class="group1">
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </p>
+                            <hr>
+                            <hr>
+                            <p class="group2">
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Michael Lii</h4>
+                <p>Transport Dealer</p>
+            </div>
+            <div class="col-md-3 wthree_team_grid">
+                <div class="hovereffect">
+                    <img src="images/team3.jpg" alt=" " class="img-responsive" />
+                    <div class="overlay">
+                        <h6>Transporters</h6>
+                        <div class="rotate">
+                            <p class="group1">
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </p>
+                            <hr>
+                            <hr>
+                            <p class="group2">
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Mark</h4>
+                <p>Transport Dealer</p>
+            </div>
+            <div class="col-md-3 wthree_team_grid">
+                <div class="hovereffect">
+                    <img src="images/team4.jpg" alt=" " class="img-responsive" />
+                    <div class="overlay">
+                        <h6>Transporters</h6>
+                        <div class="rotate">
+                            <p class="group1">
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </p>
+                            <hr>
+                            <hr>
+                            <p class="group2">
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h4>John smith</h4>
+                <p>Transport Dealer</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
     </div>
 </div>
+<!-- //team -->
+
+<!-- Clients -->
+<div class=" col-md-6 clients">
+    <h3>Testimonials</h3>
+    <section class="slider">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <div class="client">
+                        <img src="images/t1.jpg" alt="" />
+                        <h5>Brian Fantana</h5>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+
+                </li>
+                <li>
+                    <div class="client">
+                        <img src="images/t2.jpg" alt="" />
+                        <h5>Brick Tamland</h5>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+
+                </li>
+                <li>
+                    <div class="client">
+                        <img src="images/t3.jpg" alt="" />
+                        <h5>Ron Burgundy</h5>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+
+                </li>
+                <li>
+                    <div class="client">
+                        <img src="images/t4.jpg" alt="" />
+                        <h5>Arturo Mendez</h5>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- //Clients -->
+<!-- Counter -->
+<div class="col-md-6 services-bottom">
+    <div class="col-md-6 agileits_w3layouts_about_counter_left">
+        <div class="countericon">
+            <i class="fa fa-truck" aria-hidden="true"></i>
+        </div>
+        <div class="counterinfo">
+            <p class="counter">1126</p>
+            <h3>Transport vehicles</h3>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="col-md-6 agileits_w3layouts_about_counter_left">
+        <div class="countericon">
+            <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+        </div>
+        <div class="counterinfo">
+            <p class="counter">180</p>
+            <h3>International Service</h3>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+    <div class="col-md-6 agileits_w3layouts_about_counter_left">
+        <div class="countericon">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </div>
+        <div class="counterinfo">
+            <p class="counter">20</p>
+            <h3>Years Of Service</h3>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="col-md-6 agileits_w3layouts_about_counter_left">
+        <div class="countericon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="counterinfo">
+            <p class="counter">800</p>
+            <h3>Happy clients</h3>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+{{--<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=kontraktor%20di%20jawa%20timur&key=AIzaSyB1Tmy6lGhxFfasdNgRNsQnRekI69Gf_o0" allowfullscreen></iframe>--}}
+{{--<div class="clearfix"> </div>--}}
+<!-- //Counter -->
 
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="{{ asset('/la-assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
-<script>
-    $('.carousel').carousel({
-        interval: 3500
-    })
+<!-- our blog -->
+<section class="blog" id="blog">
+    <div class="container">
+        <div class="heading">
+            <h3>Latest News</h3>
+        </div>
+        <div class="blog-grids">
+            <div class="col-md-4 blog-grid">
+                <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/bg4.jpg" alt="" /></a>
+                <h5>June 10,2017</h5>
+                <h4><a href="#" data-toggle="modal" data-target="#myModal">Road Way Transport</a></h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipi scingelit. Vestibulum orci justo, vehicula vel sapien et, feugiat sapien. Integer sit amet.</p>
+                <div class="readmore-w3">
+                    <a class="readmore" href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-4 blog-grid">
+                <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/bg7.jpg" alt="" /></a>
+                <h5>June 17,2017</h5>
+                <h4><a href="#" data-toggle="modal" data-target="#myModal">Water Way Transport</a></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipi scingelit. Vestibulum orci justo, vehicula vel sapien et, feugiat tristique.</p>
+                <div class="readmore-w3">
+                    <a class="readmore" href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-4 blog-grid">
+                <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/bg8.jpg" alt="" /></a>
+                <h5>June 26,2017</h5>
+                <h4><a href="#" data-toggle="modal" data-target="#myModal">Rail Transport</a></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipi scingelit. Vestibulum orci justo, vehicula vel sapien et, feugiat sapien. Integer sit amet.</p>
+                <div class="readmore-w3">
+                    <a class="readmore" href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>
+<!-- //our blog -->
+
+<!-- footer -->
+<footer>
+    <div class="agileits-w3layouts-footer">
+        <div class="container">
+            <div class="col-md-4 w3-agile-grid">
+                <h5>About Us</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipis cingelit. Aenean bibendum urna non nisi orn, condimentum iaculis ipsum blandit. Duis vulputate metus nec luctus.</p>
+                <div class="footer-agileinfo-social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 w3-agile-grid">
+                <h5>Address</h5>
+                <div class="w3-address">
+                    <div class="w3-address-grid">
+                        <div class="w3-address-left">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3-address-right">
+                            <h6>Phone Number</h6>
+                            <p>+6285704170077 Anggy</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="w3-address-grid">
+                        <div class="w3-address-left">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3-address-right">
+                            <h6>Email Address</h6>
+                            <p>Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="w3-address-grid">
+                        <div class="w3-address-left">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3-address-right">
+                            <h6>Location</h6>
+                            <p> SE10 8JQ, Greenwich Road, London.
+                                Telephone : +0(12) 444 262 399
+                            </p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w3-agile-grid">
+                <h5>Recent Posts</h5>
+                <div class="w3ls-post-grids">
+                    <div class="w3ls-post-grid">
+                        <div class="w3ls-post-img">
+                            <a href="#"><img src="images/p1.jpg" alt="" /></a>
+                        </div>
+                        <div class="w3ls-post-info">
+                            <h6><a href="#" data-toggle="modal" data-target="#myModal">Donec vel sapien in erat</a></h6>
+                            <p>June 10,2017</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="w3ls-post-grid">
+                        <div class="w3ls-post-img">
+                            <a href="#"><img src="images/p2.jpg" alt="" /></a>
+                        </div>
+                        <div class="w3ls-post-info">
+                            <h6><a href="#" data-toggle="modal" data-target="#myModal">Donec vel sapien in erat</a></h6>
+                            <p>June 17,2017</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="w3ls-post-grid">
+                        <div class="w3ls-post-img">
+                            <a href="#"><img src="images/p3.jpg" alt="" /></a>
+                        </div>
+                        <div class="w3ls-post-info">
+                            <h6><a href="#" data-toggle="modal" data-target="#myModal">Donec vel sapien in erat</a></h6>
+                            <p>June 26,2017</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="w3ls-post-grid">
+                        <div class="w3ls-post-img">
+                            <a href="#"><img src="images/p1.jpg" alt="" /></a>
+                        </div>
+                        <div class="w3ls-post-info">
+                            <h6><a href="#" data-toggle="modal" data-target="#myModal">Donec vel sapien in erat</a></h6>
+                            <p>June 26,2017</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            {{--<p>© 2017 Transporters. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>--}}
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+
+
+<!-- js-scripts -->
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+
+<!-- start-smoth-scrolling -->
+<script src="js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
 </script>
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+<!-- start-smoth-scrolling -->
+
+<!-- Baneer-js -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+        $("#slider").responsiveSlides({
+            auto: true,
+            pager:false,
+            nav: true,
+            speed: 1000,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+    });
+</script>
+<!-- //Baneer-js -->
+
+<!-- banner bottom video script -->
+<script src="js/simplePlayer.js"></script>
+<script>
+    $("document").ready(function() {
+        $("#video").simplePlayer();
+    });
+</script>
+<!-- //banner bottom video script -->
+
+<!-- Stats-Number-Scroller-Animation-JavaScript -->
+<script src="js/waypoints.min.js"></script>
+<script src="js/counterup.min.js"></script>
+<script>
+    jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 100,
+            time: 1000
+        });
+    });
+</script>
+<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+
+
+<!-- FlexSlider-JavaScript -->
+<script defer src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+    $(function(){
+        SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function(slider){
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+<!-- //FlexSlider-JavaScript -->
+
+<!-- //js-scripts -->
 </body>
 </html>

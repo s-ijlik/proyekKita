@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 /* ================== Homepage + Admin Routes ================== */
 
 require __DIR__.'/admin_routes.php';
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});

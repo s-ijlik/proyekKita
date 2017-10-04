@@ -1,73 +1,67 @@
-@extends('la.layouts.auth')
 
-@section('htmlheader_title')
-    Log in
-@endsection
-
-@section('content')
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>{{ LAConfigs::getByKey('sitename_part1') }} </b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
-        </div>
-
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
-    <form action="{{ url('/login') }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email" name="email"/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password" name="password"/>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        </div>
-        <div class="row">
-            <div class="col-xs-8">
-                <div class="checkbox icheck">
-                    <label>
-                        <input type="checkbox" name="remember"> Remember Me
-                    </label>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Shadow Login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="css/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+</head>
+<body>
+<!-- main -->
+<div class="main-agileinfo slider ">
+    <div class="items-group">
+        <div class="item agileits-w3layouts">
+            <div class="block text main-agileits">
+                <span class="circleLight"></span>
+                <!-- login form -->
+                <div class="login-form loginw3-agile">
+                    <div class="agile-row">
+                        <h1> Login </h1>
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="login-agileits-top">
+                            <form action="{{ url('/login') }}" method="post">
+                                <p>User Name </p>
+                                <input type="text" class="name" name="email" required=""/>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <p>Password</p>
+                                <input type="password" class="password" name="password" required=""/>
+                                <label class="anim">
+                                    <input type="checkbox" class="checkbox" name="remember">
+                                    <span> Remember me ?</span>
+                                </label>
+                                <input type="submit" value="Login">
+                            </form>
+                        </div>
+                        <div class="login-agileits-bottom wthree">
+                            <h6><a href="#">Forgot password?</a></h6>
+                        </div>
+                    </div>
                 </div>
-            </div><!-- /.col -->
-            <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-            </div><!-- /.col -->
+            </div>
+            <div class="w3lsfooteragileits">
+                <!-- <p> &copy; 2017 Shadow Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="=_blank">W3layouts</a></p> -->
+            </div>
         </div>
-    </form>
-
-    @include('auth.partials.social_login')
-
-    <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
-    <!--<a href="{{ url('/register') }}" class="text-center">Register a new membership</a>-->
-
-</div><!-- /.login-box-body -->
-
-</div><!-- /.login-box -->
-
-    @include('la.layouts.partials.scripts_auth')
-
-    <script>
-        $(function () {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
-        });
-    </script>
+    </div>
+</div>
+<!-- //main -->
 </body>
-
-@endsection
+</html>
