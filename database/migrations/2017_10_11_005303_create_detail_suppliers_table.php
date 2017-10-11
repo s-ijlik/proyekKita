@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Dwij\Laraadmin\Models\Module;
 
-class CreateClientsTable extends Migration
+class CreateDetailSuppliersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,15 +17,12 @@ class CreateClientsTable extends Migration
      */
     public function up()
     {
-        Module::generate("Clients", 'clients', 'alamat', 'fa-child', [
-            ["nama", "Nama", "String", false, "", 0, 256, false],
-            ["alamat", "Alamat", "Address", false, "", 0, 256, false],
-            ["email", "email", "String", false, "", 1, 30, false],
-            ["no_telepon", "No Telepon", "Integer", false, "", 0, 12, false],
-            ["member_sejak", "Member sejak", "Integer", false, "", 0, 4, false],
-            ["no_KTP", "No KTP", "Integer", false, "", 0, 16, false],
-            ["pekerjaan", "Pekerjaan", "String", false, "", 0, 256, false],
-            ["asal_instansi", "Asal Instansi", "Address", false, "", 0, 256, false],
+        Module::generate("Detail_suppliers", 'detail_suppliers', 'namaSupplier', 'fa-anchor', [
+            ["namaSupplier", "Nama Supplier", "String", false, "", 1, 20, false],
+            ["nama_toko", "Nama Toko", "String", false, "", 1, 20, false],
+            ["alamatSupplier", "ALamat", "Address", false, "", 1, 30, false],
+            ["No.Telepon", "No.Telepon", "Integer", false, "", 1, 12, false],
+            ["emailSupplier", "Email", "String", false, "", 1, 20, false],
         ]);
 		
 		/*
@@ -71,8 +68,8 @@ class CreateClientsTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('clients')) {
-            Schema::drop('clients');
+        if (Schema::hasTable('detail_suppliers')) {
+            Schema::drop('detail_suppliers');
         }
     }
 }

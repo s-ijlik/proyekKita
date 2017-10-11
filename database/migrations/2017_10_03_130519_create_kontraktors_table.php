@@ -17,7 +17,7 @@ class CreateKontraktorsTable extends Migration
      */
     public function up()
     {
-        Module::generate("Kontraktors", 'kontraktors', 'tahun_berdiri', 'fa-institution', [
+        Module::generate("Kontraktors", 'kontraktors', 'name_perusahaan', 'fa-institution', [
             ["name_perusahaan", "nama perusahaan", "Name", false, "", 6, 30, false],
             ["alamat", "Alamat perusahaan", "Address", false, "", 0, 256, false],
             ["no_telepon", "No Telepon", "Integer", false, "", 0, 12, false],

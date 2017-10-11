@@ -1,7 +1,7 @@
 @extends('la.layouts.app')
 
 @section('htmlheader_title')
-	Client View
+	Pemesanan View
 @endsection
 
 
@@ -15,7 +15,7 @@
 					<div class="profile-icon text-primary"><i class="fa {{ $module->fa_icon }}"></i></div>
 				</div>
 				<div class="col-md-9">
-					<h4 class="name">{{ $client->$view_col }}</h4>
+					<h4 class="name">{{ $pemesanan->$view_col }}</h4>
 					<div class="row stats">
 						<div class="col-md-4"><i class="fa fa-facebook"></i> 234</div>
 						<div class="col-md-4"><i class="fa fa-twitter"></i> 12</div>
@@ -81,12 +81,12 @@
 			</div>
 		</div>
 		<div class="col-md-1 actions">
-			@la_access("Clients", "edit")
-				<a href="{{ url(config('laraadmin.adminRoute') . '/clients/'.$client->id.'/edit') }}" class="btn btn-xs btn-edit btn-default"><i class="fa fa-pencil"></i></a><br>
+			@la_access("Pemesanans", "edit")
+				<a href="{{ url(config('laraadmin.adminRoute') . '/pemesanans/'.$pemesanan->id.'/edit') }}" class="btn btn-xs btn-edit btn-default"><i class="fa fa-pencil"></i></a><br>
 			@endla_access
 			
-			@la_access("Clients", "delete")
-				{{ Form::open(['route' => [config('laraadmin.adminRoute') . '.clients.destroy', $client->id], 'method' => 'delete', 'style'=>'display:inline']) }}
+			@la_access("Pemesanans", "delete")
+				{{ Form::open(['route' => [config('laraadmin.adminRoute') . '.pemesanans.destroy', $pemesanan->id], 'method' => 'delete', 'style'=>'display:inline']) }}
 					<button class="btn btn-default btn-delete btn-xs" type="submit"><i class="fa fa-times"></i></button>
 				{{ Form::close() }}
 			@endla_access
@@ -94,7 +94,7 @@
 	</div>
 
 	<ul data-toggle="ajax-tab" class="nav nav-tabs profile" role="tablist">
-		<li class=""><a href="{{ url(config('laraadmin.adminRoute') . '/clients') }}" data-toggle="tooltip" data-placement="right" title="Back to Clients"><i class="fa fa-chevron-left"></i></a></li>
+		<li class=""><a href="{{ url(config('laraadmin.adminRoute') . '/pemesanans') }}" data-toggle="tooltip" data-placement="right" title="Back to Pemesanans"><i class="fa fa-chevron-left"></i></a></li>
 		<li class="active"><a role="tab" data-toggle="tab" class="active" href="#tab-general-info" data-target="#tab-info"><i class="fa fa-bars"></i> General Info</a></li>
 		<li class=""><a role="tab" data-toggle="tab" href="#tab-timeline" data-target="#tab-timeline"><i class="fa fa-clock-o"></i> Timeline</a></li>
 	</ul>
@@ -107,14 +107,7 @@
 						<h4>General Info</h4>
 					</div>
 					<div class="panel-body">
-						@la_display($module, 'nama')
-						@la_display($module, 'alamat')
-						@la_display($module, 'email')
-						@la_display($module, 'no_telepon')
-						@la_display($module, 'member_sejak')
-						@la_display($module, 'no_KTP')
-						@la_display($module, 'pekerjaan')
-						@la_display($module, 'asal_instansi')
+						@la_display($module, 'kodePemesanan')
 					</div>
 				</div>
 			</div>

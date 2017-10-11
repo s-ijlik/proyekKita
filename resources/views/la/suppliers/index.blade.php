@@ -1,14 +1,14 @@
 @extends("la.layouts.app")
 
-@section("contentheader_title", "Clients")
-@section("contentheader_description", "Clients listing")
-@section("section", "Clients")
+@section("contentheader_title", "Suppliers")
+@section("contentheader_description", "Suppliers listing")
+@section("section", "Suppliers")
 @section("sub_section", "Listing")
-@section("htmlheader_title", "Clients Listing")
+@section("htmlheader_title", "Suppliers Listing")
 
 @section("headerElems")
-@la_access("Clients", "create")
-	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Client</button>
+@la_access("Suppliers", "create")
+	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Supplier</button>
 @endla_access
 @endsection
 
@@ -45,28 +45,21 @@
 	</div>
 </div>
 
-@la_access("Clients", "create")
+@la_access("Suppliers", "create")
 <div class="modal fade" id="AddModal" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Add Client</h4>
+				<h4 class="modal-title" id="myModalLabel">Add Supplier</h4>
 			</div>
-			{!! Form::open(['action' => 'LA\ClientsController@store', 'id' => 'client-add-form']) !!}
+			{!! Form::open(['action' => 'LA\SuppliersController@store', 'id' => 'supplier-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
                     @la_form($module)
 					
 					{{--
 					@la_input($module, 'nama')
-					@la_input($module, 'alamat')
-					@la_input($module, 'email')
-					@la_input($module, 'no_telepon')
-					@la_input($module, 'member_sejak')
-					@la_input($module, 'no_KTP')
-					@la_input($module, 'pekerjaan')
-					@la_input($module, 'asal_instansi')
 					--}}
 				</div>
 			</div>
@@ -93,7 +86,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/client_dt_ajax') }}",
+        ajax: "{{ url(config('laraadmin.adminRoute') . '/supplier_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",
@@ -103,7 +96,7 @@ $(function () {
 		columnDefs: [ { orderable: false, targets: [-1] }],
 		@endif
 	});
-	$("#client-add-form").validate({
+	$("#supplier-add-form").validate({
 		
 	});
 });

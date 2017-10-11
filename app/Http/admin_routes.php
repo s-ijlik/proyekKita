@@ -78,4 +78,28 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Clients ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/clients', 'LA\ClientsController');
 	Route::get(config('laraadmin.adminRoute') . '/client_dt_ajax', 'LA\ClientsController@dtajax');
+
+	/* ================== Data_Kontraktors ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/data_kontraktors', 'LA\Data_KontraktorsController');
+	Route::get(config('laraadmin.adminRoute') . '/data_kontraktor_dt_ajax', 'LA\Data_KontraktorsController@dtajax');
+
+	/* ================== Detail_Proyeks ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/detail_proyeks', 'LA\Detail_ProyeksController');
+	Route::get(config('laraadmin.adminRoute') . '/detail_proyek_dt_ajax', 'LA\Detail_ProyeksController@dtajax');
+
+	/* ================== Suppliers ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/suppliers', 'LA\SuppliersController');
+	Route::get(config('laraadmin.adminRoute') . '/supplier_dt_ajax', 'LA\SuppliersController@dtajax');
+
+	/* ================== Detail_Suppliers ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/detail_suppliers', 'LA\Detail_SuppliersController');
+	Route::get(config('laraadmin.adminRoute') . '/detail_supplier_dt_ajax', 'LA\Detail_SuppliersController@dtajax');
+
+	/* ================== Products ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/products', 'LA\ProductsController');
+	Route::get(config('laraadmin.adminRoute') . '/product_dt_ajax', 'LA\ProductsController@dtajax');
+
+	/* ================== Pemesanans ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/pemesanans', 'LA\PemesanansController');
+	Route::get(config('laraadmin.adminRoute') . '/pemesanan_dt_ajax', 'LA\PemesanansController@dtajax');
 });

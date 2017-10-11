@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Dwij\Laraadmin\Models\Module;
 
-class CreateClientsTable extends Migration
+class CreateDetailProyeksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,15 +17,14 @@ class CreateClientsTable extends Migration
      */
     public function up()
     {
-        Module::generate("Clients", 'clients', 'alamat', 'fa-child', [
-            ["nama", "Nama", "String", false, "", 0, 256, false],
-            ["alamat", "Alamat", "Address", false, "", 0, 256, false],
-            ["email", "email", "String", false, "", 1, 30, false],
-            ["no_telepon", "No Telepon", "Integer", false, "", 0, 12, false],
-            ["member_sejak", "Member sejak", "Integer", false, "", 0, 4, false],
-            ["no_KTP", "No KTP", "Integer", false, "", 0, 16, false],
-            ["pekerjaan", "Pekerjaan", "String", false, "", 0, 256, false],
-            ["asal_instansi", "Asal Instansi", "Address", false, "", 0, 256, false],
+        Module::generate("Detail_proyeks", 'detail_proyeks', 'kamarTidur', 'fa-gears', [
+            ["kamarTidur", "Kamar Tidur", "Integer", false, "", 1, 2, false],
+            ["kamarMandi", "kamar mandi", "Integer", false, "", 1, 2, false],
+            ["luasTanah", "Luas Tanah", "String", false, "", 1, 5, false],
+            ["luasBangunan", "Luas Bangunan", "String", false, "", 1, 5, false],
+            ["jumlahLantai", "Jumlah Lantai", "Integer", false, "", 1, 2, false],
+            ["garasi", "Garasi", "Integer", false, "", 1, 2, false],
+            ["harga", "Harga", "Integer", false, "", 1, 12, false],
         ]);
 		
 		/*
@@ -71,8 +70,8 @@ class CreateClientsTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('clients')) {
-            Schema::drop('clients');
+        if (Schema::hasTable('detail_proyeks')) {
+            Schema::drop('detail_proyeks');
         }
     }
 }

@@ -17,13 +17,20 @@ use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
 
+use Dwij\Laraadmin\Helpers\LAHelper;
+use App\User;
 use App\Models\Client;
+use App\Role;
+use Mail;
+use Log;
+
+
 
 class ClientsController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'alamat';
-	public $listing_cols = ['id', 'nama', 'alamat', 'no_telepon', 'member_sejak', 'no_KTP', 'pekerjaan', 'asal_instansi'];
+	public $listing_cols = ['id', 'nama', 'alamat', 'email', 'no_telepon', 'member_sejak', 'no_KTP', 'pekerjaan', 'asal_instansi'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns
@@ -86,7 +93,23 @@ class ClientsController extends Controller
 			}
 			
 			$insert_id = Module::insert("Clients", $request);
-			
+            // generate password
+            $password = LAHelper::gen_password();
+
+            // Create User
+            $user = User::create([
+                'name' => $request->nama,
+                'email' => $request->email,
+                'password' => bcrypt($password),
+                'context_id' => $client_id,
+                'type' => "Client",
+            ]);
+            Log::info("User created: username: ".$user->email." Password: ".$password);
+
+            // update user role
+            $user->detachRoles();
+
+            $user->attachRole(3);
 			return redirect()->route(config('laraadmin.adminRoute') . '.clients.index');
 			
 		} else {

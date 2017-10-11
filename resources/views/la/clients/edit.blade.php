@@ -35,6 +35,7 @@
 					{{--
 					@la_input($module, 'nama')
 					@la_input($module, 'alamat')
+					@la_input($module, 'email')
 					@la_input($module, 'no_telepon')
 					@la_input($module, 'member_sejak')
 					@la_input($module, 'no_KTP')

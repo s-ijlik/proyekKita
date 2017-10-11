@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3083e4f5-960b-4814-bc14-eefbe8a13662" name="proyekkita.tk" url="http://128.199.198.192">
+        <fileTransfer host="128.199.198.192" port="22" rootFolder="/home/tukang" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
