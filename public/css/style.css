@@ -89,9 +89,9 @@ label{
 }
 .nav-contact-w3ls p {
     display: inline-block;
-    font-size: 15px;
+    font-size: 16px;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 1px;
     color: #ffffff;
 }
 .top-nav-text .call {
@@ -922,7 +922,7 @@ button.close {
     letter-spacing: .5px;
 }
 .bannerbottomright h4 {
-    font-size: 22px;
+    font-size: 12px;
     margin: 1em 0 0;
     color: #444;
     text-transform: capitalize;
@@ -1053,7 +1053,7 @@ section.slider {
     text-transform: capitalize;
 }
 .blog,.team,.services,.codes,.typography,.w3ls_address_mail_footer_grids,.portfolio{
-    padding: 6em 0;
+    padding: 3em 0;
 }
 .readmore-w3 a {
     border: 1px solid #e01f3d;
@@ -1382,15 +1382,15 @@ section.slider {
 }
 
 .group1 {
-  top: 43%;
+  top: 43.25%;
 }
 
 .group2 {
-  top: 57%;
+  top: 56.25%;
 }
 
 .hovereffect p {
-  width: 31%;
+  width: 50%;
   text-transform: none;
   font-size: 15px;
   line-height: 2;
@@ -1416,8 +1416,8 @@ section.slider {
 }
 
 .group1 a:first-child i {
-  -webkit-transform: translate3d(-60px,-60px,0) rotate(45deg) scale(2);
-  transform: translate3d(-60px,-60px,0) rotate(45deg) scale(2);
+  -webkit-transform: translate3d(-60px,-60px,0) rotate(0deg) scale(2);
+  transform: translate3d(-60px,-60px,0) rotate(0deg) scale(2);
 }
 
 .group1 a:nth-child(2) i {
@@ -2354,13 +2354,13 @@ img.zoom-img:hover,.portfolio-grids:hover img.zoom-img{
 		font-size: 3.5em;
 	}
 	.bannerbottomright {
-		padding: 4em 5em 4em 3em;
+		padding: 2em 5em 4em 3em;
 	}
 	.bannerbottomright h4 {
-		font-size: 20px;
+		font-size: 17px;
 	}
 	.clients {
-		padding: 6em 6em 6em 8em;
+		padding: 6.15em 6em 6em 8em;
 	}
 	.Servicebottomtext h3 {
 		font-size: 32px;
