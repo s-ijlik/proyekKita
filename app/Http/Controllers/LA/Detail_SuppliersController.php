@@ -16,14 +16,17 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
-
+use Dwij\Laraadmin\Helpers\LAHelper;
+use App\User;
 use App\Models\Detail_Supplier;
+use Mail;
+use Log;
 
 class Detail_SuppliersController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'namaSupplier';
-	public $listing_cols = ['id', 'namaSupplier', 'nama_toko', 'alamatSupplier', 'No.Telepon', 'emailSupplier'];
+	public $listing_cols = ['id', 'namaSupplier', 'no_telepon', 'nama_toko', 'alamatSupplier', 'emailSupplier'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns
@@ -86,6 +89,24 @@ class Detail_SuppliersController extends Controller
 			}
 			
 			$insert_id = Module::insert("Detail_Suppliers", $request);
+            // generate password
+            $password = LAHelper::gen_password();
+
+            // Create User
+            $user = User::create([
+                'name' => $request->namaSupplier,
+                'email' => $request->emailSupplier,
+                'password' => bcrypt($password),
+                'context_id' => $insert_id,
+                'type' => "Client",
+            ]);
+
+            Log::info("User created: username: ".$request->emailSupplier." Password: ".$password);
+
+            // update user role
+            $user->detachRoles();
+
+            $user->attachRole(4);
 			
 			return redirect()->route(config('laraadmin.adminRoute') . '.detail_suppliers.index');
 			

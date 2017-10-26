@@ -16,8 +16,11 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
-
+use Dwij\Laraadmin\Helpers\LAHelper;
 use App\Models\Supplier;
+
+use Mail;
+use Log;
 
 class SuppliersController extends Controller
 {
@@ -78,14 +81,19 @@ class SuppliersController extends Controller
 		if(Module::hasAccess("Suppliers", "create")) {
 		
 			$rules = Module::validateRules("Suppliers", $request);
+
+
 			
 			$validator = Validator::make($request->all(), $rules);
 			
 			if ($validator->fails()) {
 				return redirect()->back()->withErrors($validator)->withInput();
 			}
-			
-			$insert_id = Module::insert("Suppliers", $request);
+
+			dd($request);
+//			$insert_id = Module::insert("Suppliers", $request);
+
+
 			
 			return redirect()->route(config('laraadmin.adminRoute') . '.suppliers.index');
 			

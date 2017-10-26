@@ -23,7 +23,7 @@ class PemesanansController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'kodePemesanan';
-	public $listing_cols = ['id', 'kodePemesanan'];
+	public $listing_cols = ['id', 'alamatProyek', 'namaProyek', 'tanggal', 'deskripsi', 'anggaran'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

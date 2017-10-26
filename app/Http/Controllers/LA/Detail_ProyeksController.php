@@ -23,7 +23,7 @@ class Detail_ProyeksController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'kamarTidur';
-	public $listing_cols = ['id', 'kamarTidur', 'kamarMandi', 'luasTanah', 'luasBangunan', 'jumlahLantai', 'garasi', 'harga'];
+	public $listing_cols = ['id', 'kamarTidur', 'kamarMandi', 'luasTanah', 'luasBangunan', 'jumlahLantai', 'garasi', 'gambar'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

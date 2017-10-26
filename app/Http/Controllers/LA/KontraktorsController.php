@@ -16,14 +16,19 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
-
+use Dwij\Laraadmin\Helpers\LAHelper;
 use App\Models\Kontraktor;
 
+use App\User;
+
+use App\Role;
+use Mail;
+use Log;
 class KontraktorsController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'name_perusahaan';
-	public $listing_cols = ['id', 'name_perusahaan', 'alamat', 'no_telepon', 'npwp', 'no_akta', 'siup', 'tahun_berdiri'];
+	public $listing_cols = ['id', 'name_perusahaan', 'alamat', 'email_kontraktor', 'no_telepon', 'npwp', 'no_akta', 'siup', 'tahun_berdiri'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns
@@ -86,7 +91,23 @@ class KontraktorsController extends Controller
 			}
 			
 			$insert_id = Module::insert("Kontraktors", $request);
-			
+            // generate password
+            $password = LAHelper::gen_password();
+
+            // Create User
+            $user = User::create([
+                'name' => $request->name_perusahaan,
+                'email' => $request->email_kontraktor,
+                'password' => bcrypt($password),
+                'context_id' => $insert_id,
+                'type' => "Client",
+            ]);
+            Log::info("User created: username: ".$request->email_kontraktor." Password: ".$password);
+
+            // update user role
+            $user->detachRoles();
+
+            $user->attachRole(2);
 			return redirect()->route(config('laraadmin.adminRoute') . '.kontraktors.index');
 			
 		} else {

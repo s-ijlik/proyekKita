@@ -101,7 +101,7 @@ class ClientsController extends Controller
                 'name' => $request->nama,
                 'email' => $request->email,
                 'password' => bcrypt($password),
-                'context_id' => $client_id,
+                'context_id' => $insert_id,
                 'type' => "Client",
             ]);
             Log::info("User created: username: ".$user->email." Password: ".$password);

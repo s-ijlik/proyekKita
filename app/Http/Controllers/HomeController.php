@@ -35,7 +35,7 @@ class HomeController extends Controller
         $roleCount = \App\Role::count();
 		if($roleCount != 0) {
 			if($roleCount != 0) {
-				return view('home');
+				return view('homepage');
 			}
 		} else {
 			return view('errors.error', [
